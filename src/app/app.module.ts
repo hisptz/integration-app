@@ -21,6 +21,7 @@ import { RoutingModule } from './app.routes';
 import { CoreModule, RouteSerializer } from './core';
 import { effects } from './store/effects';
 import { metaReducers, reducers } from './store/reducers';
+import { MAT_LABEL_GLOBAL_OPTIONS } from '@angular/material/core';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -69,7 +70,10 @@ export function HttpLoaderFactory(http: HttpClient) {
       enabled: environment.production
     })
   ],
-  providers: [{ provide: RouterStateSerializer, useClass: RouteSerializer }],
+  providers: [
+    { provide: RouterStateSerializer, useClass: RouteSerializer },
+    { provide: MAT_LABEL_GLOBAL_OPTIONS, useValue: { float: 'never' } }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

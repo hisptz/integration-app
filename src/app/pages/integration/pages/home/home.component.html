@@ -1,0 +1,68 @@
+<div class="row">
+  <div class="col-12">
+    <!-- header -->
+    <div class="home-header border-bottom">
+      <!-- search -->
+      <div class="">
+        <img src="assets/icons/icon-36x36.png" class="mr-2" alt="">
+        <mat-form-field class="mr-3">
+          <input matInput placeholder="Search integration">
+        </mat-form-field>
+        <span>Type: </span>
+        <mat-form-field>
+          <mat-label>Type</mat-label>
+          <mat-select name="" value="ALL">
+            <mat-option [value]="'ALL'">
+              All
+            </mat-option>
+            <mat-option [value]="'SENDING'">
+              Sending
+            </mat-option>
+            <mat-option [value]="'RECEIVING'">
+              Receiving
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <!-- end of search -->
+
+      <!-- create button -->
+      <div>
+        <button mat-stroked-button class="mt-2">
+          <mat-icon>add</mat-icon>
+          <span>New</span>
+        </button>
+      </div>
+      <!-- create button -->
+    </div>
+    <!-- end of header -->
+
+    <!-- content -->
+    <div class="home-content mt-3 row">
+      <div class="col-sm-12 " *ngFor="let integration of integrations">
+        <div class="integration-item border-bottom pt-3 pb-3">
+          <h5>{{integration.name}}</h5>
+          <div>
+            <span>Type: <small class="text-muted">SENDING</small></span>
+            <span class="ml-3">Status: <span class="text-muted">ACTIVE</span></span>
+            <span class="ml-3">Warning: <small class="text-muted">SENDING</small></span>
+            <span class="ml-3">Last Transaction Duration: <small class="text-muted">3 Hours</small></span>
+            <span class="ml-3">Last Transaction Time: <small class="text-muted">3 Hours</small></span>
+          </div>
+          <div class="integration-actions">
+            <button mat-icon-button title="Activate">
+              <mat-icon>power</mat-icon>
+            </button>
+            <button mat-icon-button title="Restart Transaction">
+              <mat-icon>sync</mat-icon>
+            </button>
+            <button mat-icon-button title="Delete">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end of content -->
+  </div>
+</div>
