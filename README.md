@@ -3,7 +3,7 @@
 [![devDependencies Status](https://david-dm.org/hisptz/integration-app/dev-status.svg)](https://david-dm.org/hisptz/integration-app?type=dev)
 [![Maintainability](https://api.codeclimate.com/v1/badges/711ec9ef698b32577eec/maintainability)](https://codeclimate.com/github/hisptz/integration-app/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/711ec9ef698b32577eec/test_coverage)](https://codeclimate.com/github/hisptz/integration-app/test_coverage)
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/) [![Greenkeeper badge](https://badges.greenkeeper.io/hisptz/integration-app.svg)](https://greenkeeper.io/)
 
 # Integration App
 
