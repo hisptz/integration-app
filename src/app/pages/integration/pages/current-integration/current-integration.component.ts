@@ -9,6 +9,7 @@ import { back } from 'src/app/store/actions';
   styleUrls: ['./current-integration.component.css']
 })
 export class CurrentIntegrationComponent implements OnInit {
+  integration: any;
   constructor(private store: Store<State>) {}
 
   ngOnInit() {}
