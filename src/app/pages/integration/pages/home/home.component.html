@@ -1,34 +1,36 @@
 <div class="row">
-  <div class="col-12">
+  <div class="col-2  mt-3">
+    <mat-nav-list>
+      <a mat-list-item class="mb-3">
+        <img src="assets/icons/icon-36x36.png" class="mr-2" alt="">
+        <h3>Integration</h3>
+      </a>
+      <a mat-list-item class="ml-2" [routerLink]="['messages']" [routerLinkActive]="'active-link'">
+        <mat-icon>arrow_downward</mat-icon>
+        <span class="ml-3">Pull Integration</span>
+      </a>
+      <a mat-list-item class="ml-2" [routerLink]="['configuration']" [routerLinkActive]="'active-link'">
+        <mat-icon>arrow_upward</mat-icon>
+        <span class="ml-3">Push Integration</span>
+      </a>
+    </mat-nav-list>
+  </div>
+  <div class="col-10 mt-3">
+
     <!-- header -->
     <div class="home-header border-bottom">
       <!-- search -->
       <div class="">
-        <img src="assets/icons/icon-36x36.png" class="mr-2" alt="">
-        <mat-form-field class="mr-3">
+        <mat-form-field class="mr-3" appearance="outline">
+          <mat-label>Search integration</mat-label>
           <input matInput placeholder="Search integration">
-        </mat-form-field>
-        <span>Type: </span>
-        <mat-form-field>
-          <mat-label>Type</mat-label>
-          <mat-select name="" value="ALL">
-            <mat-option [value]="'ALL'">
-              All
-            </mat-option>
-            <mat-option [value]="'SENDING'">
-              Sending
-            </mat-option>
-            <mat-option [value]="'RECEIVING'">
-              Receiving
-            </mat-option>
-          </mat-select>
         </mat-form-field>
       </div>
       <!-- end of search -->
 
       <!-- create button -->
       <div>
-        <button mat-stroked-button class="mt-2">
+        <button mat-flat-button color="primary" class="mt-2">
           <mat-icon>add</mat-icon>
           <span>New</span>
         </button>
@@ -39,28 +41,43 @@
 
     <!-- content -->
     <div class="home-content mt-3 row">
-      <div class="col-sm-12 " *ngFor="let integration of integrations">
-        <div class="integration-item border-bottom pt-3 pb-3">
-          <h5>{{integration.name}}</h5>
-          <div>
-            <span>Type: <small class="text-muted">SENDING</small></span>
-            <span class="ml-3">Status: <span class="text-muted">ACTIVE</span></span>
-            <span class="ml-3">Warning: <small class="text-muted">SENDING</small></span>
-            <span class="ml-3">Last Transaction Duration: <small class="text-muted">3 Hours</small></span>
-            <span class="ml-3">Last Transaction Time: <small class="text-muted">3 Hours</small></span>
-          </div>
-          <div class="integration-actions">
-            <button mat-icon-button title="Activate">
-              <mat-icon>power</mat-icon>
-            </button>
-            <button mat-icon-button title="Restart Transaction">
-              <mat-icon>sync</mat-icon>
-            </button>
-            <button mat-icon-button title="Delete">
-              <mat-icon>delete</mat-icon>
-            </button>
-          </div>
-        </div>
+      <div class="col-12">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th width="5%">#</th>
+              <th width="45%">Name</th>
+              <th width="10%">Strategy</th>
+              <th width="10%">Status</th>
+              <th width="20%">Last transaction</th>
+              <th width="10%">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="integration-item" *ngFor="let integration of integrations; let i = index"
+              (mouseenter)="onFocusIntegration($event, integration.id)"
+              (mouseleave)="onBlurIntegration($event, integration.id)">
+              <td>{{i + 1}}</td>
+              <td>{{integration.name}}</td>
+              <td>{{integration.name}}</td>
+              <td>{{integration.strategy}}</td>
+              <td>{{integration.strategy}}</td>
+              <td>
+                <div *ngIf="focusedIntegration === integration.id">
+                  <button mat-icon-button title="Activate" (click)="onActivate($event, integration.id)">
+                    <mat-icon>power</mat-icon>
+                  </button>
+                  <button mat-icon-button title="Restart Transaction" (click)="onRefresh($event, integration.id)">
+                    <mat-icon>sync</mat-icon>
+                  </button>
+                  <button mat-icon-button title="Delete" (click)="onDelete($event, integration.id)">
+                    <mat-icon>delete</mat-icon>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
     <!-- end of content -->

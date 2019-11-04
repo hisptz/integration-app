@@ -15,6 +15,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 @NgModule({
   declarations: [],
   imports: [
@@ -33,7 +34,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatCheckboxModule,
     MatSlideToggleModule,
     MatProgressBarModule,
-    MatIconModule
+    MatIconModule,
+    MatListModule
   ],
   exports: [
     MatButtonModule,
@@ -51,7 +53,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatCheckboxModule,
     MatSlideToggleModule,
     MatProgressBarModule,
-    MatIconModule
+    MatIconModule,
+    MatListModule
   ]
 })
 export class MaterialModule {}

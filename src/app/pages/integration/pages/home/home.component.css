@@ -9,16 +9,11 @@
 
 .integration-item {
   position: relative;
+  cursor: pointer;
 }
 
-.integration-actions {
-  display: none;
-  position: absolute;
-  right: 15px;
-  bottom: 15px;
-  z-index: 500;
-}
-
-.integration-item:hover .integration-actions {
-  display: block;
+.create-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
 }
