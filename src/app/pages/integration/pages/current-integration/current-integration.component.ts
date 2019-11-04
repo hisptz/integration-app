@@ -17,4 +17,14 @@ export class CurrentIntegrationComponent implements OnInit {
     e.stopPropagation();
     this.store.dispatch(back());
   }
+
+  onActivate(e, id: string) {
+    e.stopPropagation();
+  }
+  onRefresh(e, id: string) {
+    e.stopPropagation();
+  }
+  onDelete(e, id: string) {
+    e.stopPropagation();
+  }
 }
