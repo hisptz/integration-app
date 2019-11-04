@@ -5,9 +5,9 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/dbe97dbdfbd55344c38f/test_coverage)](https://codeclimate.com/github/hisptz/integration-app/test_coverage)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/) [![Greenkeeper badge](https://badges.greenkeeper.io/hisptz/integration-app.svg)](https://greenkeeper.io/)
 
-# Angular DHIS2 based seed app
+# Integration App
 
-Boilerplate codes to fast track developing DHIS2 applications based on Angular framework
+App to help setting up configurations to support integration between DHIS2 system and other systems
 
 ## Prerequisites
 
