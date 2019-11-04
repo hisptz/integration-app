@@ -21,6 +21,8 @@ import { RoutingModule } from './app.routes';
 import { CoreModule, RouteSerializer } from './core';
 import { effects } from './store/effects';
 import { metaReducers, reducers } from './store/reducers';
+import { MAT_LABEL_GLOBAL_OPTIONS } from '@angular/material/core';
+import { MonacoEditorModule } from 'ngx-monaco-editor';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -35,6 +37,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     RoutingModule,
     CoreModule,
     BrowserAnimationsModule,
+    MonacoEditorModule.forRoot(),
     StoreModule.forRoot(reducers, { metaReducers }),
     EffectsModule.forRoot(effects),
     NgxDhis2HttpClientModule.forRoot({
@@ -69,7 +72,10 @@ export function HttpLoaderFactory(http: HttpClient) {
       enabled: environment.production
     })
   ],
-  providers: [{ provide: RouterStateSerializer, useClass: RouteSerializer }],
+  providers: [
+    { provide: RouterStateSerializer, useClass: RouteSerializer },
+    { provide: MAT_LABEL_GLOBAL_OPTIONS, useValue: { float: 'auto' } }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

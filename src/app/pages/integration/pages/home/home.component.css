@@ -1,0 +1,19 @@
+.search-container,
+.home-header {
+  display: flex;
+}
+
+.home-header {
+  justify-content: space-between;
+}
+
+.integration-item {
+  position: relative;
+  cursor: pointer;
+}
+
+.create-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
