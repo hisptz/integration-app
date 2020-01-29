@@ -23,6 +23,7 @@ import { effects } from './store/effects';
 import { metaReducers, reducers } from './store/reducers';
 import { MAT_LABEL_GLOBAL_OPTIONS } from '@angular/material/core';
 import { MonacoEditorModule } from 'ngx-monaco-editor';
+import { AddIntegrationComponent } from './pages/integration/pages/add-integration/app/pages/integration/pages/add-integration/add-integration.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -30,7 +31,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, AddIntegrationComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
