@@ -1,37 +1,39 @@
-import { Component, OnInit } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { Store } from '@ngrx/store';
-import { State } from 'src/app/store/reducers';
-import { go } from 'src/app/store/actions';
+import { Component, OnInit } from "@angular/core";
+import { MatSnackBar } from "@angular/material/snack-bar";
+import { Store } from "@ngrx/store";
+import { State } from "src/app/store/reducers";
+import { go } from "src/app/store/actions";
+import { MatDialog } from "@angular/material";
+import { AddIntegrationComponent } from "../add-integration/add-integration.component";
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: "app-home",
+  templateUrl: "./home.component.html",
+  styleUrls: ["./home.component.css"]
 })
 export class HomeComponent implements OnInit {
   integrations: any[];
   focusedIntegration: string;
-  constructor(private store: Store<State>) {
+  constructor(private store: Store<State>, private dialog: MatDialog) {
     this.integrations = [
       {
         id: 1,
-        name: 'DHIS2 ELMIS',
-        type: 'RECEIVING'
+        name: "DHIS2 ELMIS",
+        type: "RECEIVING"
       },
       {
         id: 2,
-        name: 'DHIS2 VIMS',
-        type: 'RECEIVING'
+        name: "DHIS2 VIMS",
+        type: "RECEIVING"
       },
       {
-        name: 'DHIS2 HFR',
-        type: 'RECEIVING'
+        name: "DHIS2 HFR",
+        type: "RECEIVING"
       },
       {
         id: 3,
-        name: 'DHIS2 HFR',
-        type: 'RECEIVING'
+        name: "DHIS2 HFR",
+        type: "RECEIVING"
       }
     ];
   }
@@ -40,7 +42,7 @@ export class HomeComponent implements OnInit {
 
   onView(e, integration) {
     e.stopPropagation();
-    this.store.dispatch(go({ path: ['/id'] }));
+    this.store.dispatch(go({ path: ["/id"] }));
   }
 
   onDelete(e, id) {
@@ -66,6 +68,13 @@ export class HomeComponent implements OnInit {
 
   onBlurIntegration(e, id: string) {
     e.stopPropagation();
-    this.focusedIntegration = '';
+    this.focusedIntegration = "";
+  }
+  onAddNew(e) {
+    e.stopPropagation();
+    this.dialog.open(AddIntegrationComponent, {
+      height: "300px",
+      width: "400px"
+    });
   }
 }
