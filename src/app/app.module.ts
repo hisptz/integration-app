@@ -23,7 +23,9 @@ import { effects } from './store/effects';
 import { metaReducers, reducers } from './store/reducers';
 import { MAT_LABEL_GLOBAL_OPTIONS } from '@angular/material/core';
 import { MonacoEditorModule } from 'ngx-monaco-editor';
-import { AddIntegrationComponent } from './pages/integration/pages/add-integration/app/pages/integration/pages/add-integration/add-integration.component';
+import { AddIntegrationComponent } from './pages/integration/pages/add-integration/add-integration.component';
+import {MatInputModule} from '@angular/material/input';
+import { MatSelectModule, MatDialogModule } from '@angular/material';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -37,6 +39,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     HttpClientModule,
     RoutingModule,
     CoreModule,
+    MatInputModule,
+    MatDialogModule,
+    MatSelectModule,
     BrowserAnimationsModule,
     MonacoEditorModule.forRoot(),
     StoreModule.forRoot(reducers, { metaReducers }),
@@ -77,6 +82,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     { provide: RouterStateSerializer, useClass: RouteSerializer },
     { provide: MAT_LABEL_GLOBAL_OPTIONS, useValue: { float: 'auto' } }
   ],
+  entryComponents
+  : [AddIntegrationComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
