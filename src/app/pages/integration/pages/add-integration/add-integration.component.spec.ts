@@ -1,16 +1,18 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { AddIntegrationComponent } from './add-integration.component';
+import { AddIntegrationComponent } from "./add-integration.component";
+import { MatInputModule, MatDialogModule, MatSelectModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-describe('AddIntegrationComponent', () => {
+describe("AddIntegrationComponent", () => {
   let component: AddIntegrationComponent;
   let fixture: ComponentFixture<AddIntegrationComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AddIntegrationComponent ]
-    })
-    .compileComponents();
+      declarations: [AddIntegrationComponent],
+      imports: [MatInputModule, MatDialogModule, MatSelectModule, BrowserAnimationsModule]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +21,7 @@ describe('AddIntegrationComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
