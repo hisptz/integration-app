@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { AddIntegrationComponent } from "./add-integration.component";
-import { MatInputModule, MatDialogModule, MatSelectModule } from '@angular/material';
+import { MatInputModule, MatDialogModule, MatSelectModule, MatIconModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe("AddIntegrationComponent", () => {
@@ -11,7 +11,7 @@ describe("AddIntegrationComponent", () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [AddIntegrationComponent],
-      imports: [MatInputModule, MatDialogModule, MatSelectModule, BrowserAnimationsModule]
+      imports: [MatInputModule, MatDialogModule, MatSelectModule, BrowserAnimationsModule, MatIconModule]
     }).compileComponents();
   }));
 
