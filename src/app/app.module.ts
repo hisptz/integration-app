@@ -25,7 +25,7 @@ import { MAT_LABEL_GLOBAL_OPTIONS } from '@angular/material/core';
 import { MonacoEditorModule } from 'ngx-monaco-editor';
 import { AddIntegrationComponent } from './pages/integration/pages/add-integration/add-integration.component';
 import {MatInputModule} from '@angular/material/input';
-import { MatSelectModule, MatDialogModule } from '@angular/material';
+import { MatSelectModule, MatDialogModule, MatIconModule } from '@angular/material';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -42,6 +42,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatInputModule,
     MatDialogModule,
     MatSelectModule,
+    MatIconModule,
     BrowserAnimationsModule,
     MonacoEditorModule.forRoot(),
     StoreModule.forRoot(reducers, { metaReducers }),
