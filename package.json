@@ -31,7 +31,7 @@
     "@iapps/ngx-dhis2-menu": "^1.0.9",
     "@ngrx/effects": "^8.0.1",
     "@ngrx/entity": "^8.0.1",
-    "@ngrx/router-store": "^8.0.1",
+    "@ngrx/router-store": "^9.1.0",
     "@ngrx/store": "^8.0.1",
     "@ngrx/store-devtools": "^8.0.1",
     "@ngx-translate/core": "^11.0.1",
